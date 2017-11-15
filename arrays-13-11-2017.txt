@@ -1,0 +1,449 @@
+import java.util.Scanner;
+
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]={10,20,30,62,3};
+		/* int []b; 
+		 int [] c;
+		*/
+		
+		//a = new int[]{10,20,30,62};
+		
+		Scanner scInput = new Scanner(System.in);
+		
+		for(int i=0; i<a.length;i++)
+		{
+			System.out.println("Enter an element:");
+			a[i]= Integer.parseInt(scInput.nextLine());
+		}
+		
+		System.out.println("Using for-each loop:");
+		for (int i : a)
+		{
+			System.out.println(i);
+		}
+		scInput.close();
+	}
+
+}
+
+
+import java.util.Scanner;
+
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]={10,20,30,62,3};
+		/* int []b; 
+		 int [] c;
+		*/
+		
+		//a = new int[]{10,20,30,62};
+		int sum=0;
+		Scanner scInput = new Scanner(System.in);
+		
+		for(int i=0; i<a.length;i++)
+		{
+			System.out.println("Enter an element:");
+			a[i]= Integer.parseInt(scInput.nextLine());
+			sum +=a[i]; //sum=sum+a[i];
+		}
+		
+		System.out.println(sum);
+		scInput.close();
+	}
+}
+
+
+OUTPUT=125
+
+
+
+import java.util.Scanner;
+
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]={10,20,30,62,3};
+		/* int []b; 
+		 int [] c;
+		*/
+		
+		//a = new int[]{10,20,30,62};
+		Scanner scInput = new Scanner(System.in);
+		
+		for(int i=0; i<a.length;i++)
+		{
+			System.out.println("Enter an element:");
+			a[i]= Integer.parseInt(scInput.nextLine());
+			
+		}
+		
+		int length= a.length-1;
+		for(int i= 0;i < a.length ;i++)
+		{
+			System.out.println(a[i]+a[i+1]);
+		}
+		
+		scInput.close();
+	}
+}
+
+
+
+
+
+import java.util.Scanner;
+
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]= new int[5];
+		int element= 0;
+		int count= 0;
+		
+		Scanner scInput = new Scanner(System.in);
+		
+		for(int i=0; i<a.length;i++)
+		{
+			System.out.println("Enter an element:");
+			a[i]= Integer.parseInt(scInput.nextLine());
+			
+		}
+		
+		System.out.println("Enter element to be searched:");
+		element = Integer.parseInt(scInput.nextLine());
+		
+		for (int i = 0; i < a.length; i++)
+		{
+			if(element == a[i])
+			{
+				count++;
+			}
+		}
+		
+		System.out.println("Element frquency:"+ count);
+		
+		/*if(count != -1)
+		{
+			System.out.println("Element found at position " + count);
+		}
+		else
+		{
+			System.out.println("Element found at position ");
+		}*/
+		scInput.close();
+	}
+}
+
+
+
+SORTING
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]= new int[7];
+		int element= 0;
+		int count= 0;
+		
+		Scanner scInput = new Scanner(System.in);
+		
+		for(int i=0; i<a.length;i++)
+		{
+			System.out.println("Enter an element:");
+			a[i]= Integer.parseInt(scInput.nextLine());
+			
+		}
+		
+		System.out.println("Before Sorting:");
+		System.out.println(Arrays.toString(a));
+		
+		Arrays.sort(a);
+		
+		System.out.println("After Sorting:");
+		System.out.println(Arrays.toString(a));
+		
+		scInput.close();
+	}
+}
+
+
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]= new int[7];
+		int element= 0;
+		
+		Scanner scInput = new Scanner(System.in);
+		
+		for(int i=0; i<a.length; i++)
+		{
+			System.out.println("Enter elements:");
+			element= Integer.parseInt(scInput.nextLine());
+		}
+		
+		System.out.println("Enter element to be searched:");
+		element= Integer.parseInt(scInput.nextLine());
+		
+		System.out.println("Before Sorting:");
+		System.out.println(Arrays.toString(a));
+		
+		Arrays.sort(a);
+		
+		System.out.println("After Sorting:");
+		System.out.println(Arrays.toString(a));
+		
+		int index= Arrays.binarySearch(a, element);
+		
+		if(index >= 0)
+		{
+			System.out.println("Element found at position:" + index);
+		}
+		else
+		{
+			System.out.println("Element not found");
+		}
+		scInput.close();
+	}
+}
+
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]= new int[7];
+		int b[]= new int[7];
+		
+		Arrays.fill(a, 100);
+		Arrays.fill(b, 100);
+
+		System.out.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(b));
+		
+		
+		System.out.println("Are they same?");
+		if(Arrays.equals(a, b)){
+			System.out.println("Yes");
+		}
+		else
+		{
+			System.out.println("No");
+		}
+		
+	}
+}
+
+
+USE OF CopyOf
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]= new int[7];
+		int b[]= new int[7];
+		
+		Arrays.fill(a, 100);
+		
+		b = Arrays.copyOf(a, 5);
+
+		System.out.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(b));
+		
+		System.out.println("Are they same?");
+		if(Arrays.equals(a, b))
+		{
+			System.out.println("Yes");
+		}
+		else
+		{
+			System.out.println("No");
+		}		
+	}
+}
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class BasicArrayDemo {
+
+	public static void main(String[] args) 
+	{
+		int a[]= new int[7];
+		int b[]= new int[7];
+		
+		Arrays.fill(a, 100);
+		
+		a[1] = 50;
+		a[2] = 56;
+		a[3] = 77;
+		
+		b = Arrays.copyOfRange(a, 0,9);
+
+		System.out.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(b));
+		
+		System.out.println("Are they same?");
+		if(Arrays.equals(a, b))
+		{
+			System.out.println("Yes");
+		}
+		else
+		{
+			System.out.println("No");
+		}		
+	}
+}
+
+
+public class VarityArgsDemo {
+
+	public static void main(String[] args) 
+	{
+		int sum = Varity.add(90);
+		System.out.println(sum);
+		
+		sum = Varity.add(90,82,60);
+		System.out.println(sum);
+		
+		sum = Varity.add(90,33,22,88);
+		System.out.println(sum);
+	}
+}
+
+
+
+public class Varity 
+{
+	public static int add(int... a)
+	{
+		int sum=0;
+		
+		for (int i = 0; i < a.length; i++) 
+		{
+			sum += a[i];
+		}
+		return sum;
+	}
+}
+
+
+public class DobArray 
+{
+	public static void main(String[] args) 
+	{
+		int a[][];
+		/*int [][]b;
+		int [][] c;
+		int []d[];*/
+		
+		a = new int[][]{
+				{1,2,3},
+				{1,2,3},
+				{1,2,3}
+		};
+		
+		for (int i= 0; i< a.length; i++)
+		{
+			for( int j= 0; j< a.length; j++)
+			{
+				System.out.print(a[i][j] +"\t");
+			}
+			System.out.println();
+		}
+		
+	}
+}
+
+
+public class DobArray 
+{
+	public static void main(String[] args) 
+	{
+		int a[][];
+		/*int [][]b;
+		int [][] c;
+		int []d[];*/
+		
+		a = new int[][]{
+				{1,2,3},
+				{1,2,3},
+				{1,2,3}
+		};
+		
+		for (int i= 0; i< a.length; i++)
+		{
+			for( int j= 0; j< a.length; j++)
+			{
+				System.out.print(a[i][j] +"\t");
+			}
+			System.out.println();
+		}
+		
+	}
+}
+
+
+package com.bvk.client;
+
+import com.bvk.entity.Shop;
+
+public class ClientShopArray {
+
+	public static void main(String[] args)
+	{
+		Shop shops[] = new Shop[3];
+		
+		shops[0] = new Shop(1, "abc", 500000, 5000);
+		shops[1] = new Shop(2, "xyz", 600000, 6000);
+		shops[2] = new Shop(3, "pqr", 800000, 8000);
+		
+		for(Shop shop : shops)
+		{
+			System.out.print(shop);
+		}
+
+		for (int i = 0; i < shops.length; i++) 
+		{
+			System.out.print(shops[i]);
+		}
+	}
+
+}
+
+
+
