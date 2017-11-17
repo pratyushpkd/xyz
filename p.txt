@@ -1,0 +1,28 @@
+public boolean insertPurchase(PurchaseDetailsBean purchaseDetailsBean)
+			throws MobilePurchaseException {
+		int records = 0;
+		boolean isInserted = false;
+		
+		try(Connection connPurchaseDetails  = DBConnection.getInstance().getConnection();	
+		
+		PreparedStatement preparedStatement=
+		connPurchaseDetails.prepareStatement(QueryMapperPurchaseDetails.INSERT_PURCHASE);
+	){
+		java.sql.Date purchaseDate = new Date(new java.util.Date().getTime());
+		
+		preparedStatement.setInt(1, purchaseDetailsBean.getPurchaseId());
+		preparedStatement.setString(2, purchaseDetailsBean.getName());
+		preparedStatement.setString(3, purchaseDetailsBean.getMailId());
+		preparedStatement.setString(4, purchaseDetailsBean.getPhoneNo());
+		preparedStatement.setDate(5, purchaseDate);
+		preparedStatement.setInt(6, purchaseDetailsBean.getMobileId());
+		
+		records = preparedStatement.executeUpdate();
+		if(records>0){
+			isInserted = true;
+		}
+		
+	}catch(SQLException sqlEx){
+		throw new MobilePurchaseException(sqlEx.getMessage());
+	}
+	return isInserted;}
