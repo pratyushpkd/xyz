@@ -1,0 +1,174 @@
+3.1
+
+import java.util.Scanner;
+import java.io.*;
+public class UserString 
+{
+	public static void addString()
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter a String");  
+		String name=s.next();
+		String s3=name.concat(name);  
+		System.out.println(s3);
+	}
+	
+	public static void replaceString()
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter a String");  
+		String a=s.next();
+		for (int i=0; i < a.length(); i++){
+	        if (i % 2 != 0)
+	        {
+	          a = a.substring(0,i-1) + "#" + a.substring(i, a.length());
+	        }
+	      }
+	      System.out.println(a);
+	}
+		
+	public static void dupString() throws IOException
+	{
+	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	        System.out.print("Enter a String:");
+	        String s = br.readLine();
+	        int l = s.length();
+	        char ch;
+	        String ans="";
+	         
+	        for(int i=0; i<l; i++)
+	        {
+	            ch = s.charAt(i);
+	            if(ch!=' ')
+	                ans = ans + ch;
+	            s = s.replace(ch,' ');
+	        }
+	       System.out.println(ans);
+	}
+	
+	public static void oddUpper()
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter a String");  
+		String a=s.next();
+		
+		for (int i = 0, len = a.length(); i < len; i++) {
+		    char ch = a.charAt(i);
+		    if (i % 2 == 0) {
+		        System.out.print(Character.toUpperCase(ch));
+		    } else {
+		        System.out.print(Character.toLowerCase(ch));
+		    }
+		}
+	}
+	
+	public static void main(String[] args) throws IOException 
+	{
+		Scanner s = new Scanner(System.in);
+
+		System.out.println("1. Add the String to itself");
+        System.out.println("2. Replace odd positions with #");
+        System.out.println("3. Remove duplicate characters in the String");
+        System.out.println("4. Change odd characters to upper case ");
+        
+		int st=0;
+		st = s.nextInt();
+		 switch(st) {
+         case 1:addString(); 
+            	break;
+         case 2:replaceString();
+        	break;
+         case 3:dupString();
+            	break;
+         case 4:oddUpper();
+            	break;
+         default :
+            System.out.println("Invalid Choice!!");
+      }
+	}
+}
+
+
+
+3.2
+
+
+
+package com.capgemini.ques3;
+
+public class stringPos {
+
+	static String str;
+	public stringPos(String str) {
+		stringPos.str = str;
+	}
+	
+	public static boolean check(){
+		
+		
+		char a,b;
+		int flag=0;
+		
+		int length = str.length();
+		
+		for(int i = 0 ; i < length-1; i++)
+		{
+			a=str.charAt(i);
+			b=str.charAt(i+1);
+			
+			if(a>b)
+			{
+				flag=1;
+				break;
+			}
+		
+		}
+		if(flag==0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+	}
+}
+
+
+
+
+
+
+package com.capgemini.ques3;
+
+import java.util.Scanner;
+
+public class StringPosMain {
+
+	public static void main(String[] args) 
+	{
+		stringPos pstring;
+		Scanner scanf = new Scanner(System.in);
+		String str;
+		
+		System.out.println("Enter a string: ");
+		str = scanf.nextLine();
+		scanf.close();
+		pstring = new stringPos(str);
+		
+		boolean pn=stringPos.check();
+		
+		if(pn)
+		{
+			System.out.println("Positive String");
+		}
+		else
+		{
+			System.out.println("Negative String");
+		}
+
+	}
+
+
+	
